@@ -16,6 +16,11 @@
 
 この初期実装では、送料はまず手入力で確実に dry run できる形にしています。次の拡張で Japan Post / DHL / FedEx / eBay Logistics API などの料金APIを追加できます。
 
+
+## ユーザー側の準備チェックリスト
+
+APIキー、Business Policy ID、商品ごとの入力情報、画面での進め方は [docs/USER_CHECKLIST.md](docs/USER_CHECKLIST.md) にまとめています。まずこのチェックリストを上から埋めてください。
+
 ## セットアップ
 
 ```bash

@@ -3,13 +3,14 @@ from __future__ import annotations
 import json
 from typing import Annotated
 
-from fastapi import Depends, FastAPI, Form, HTTPException, Request
+from fastapi import Depends, FastAPI, Form, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.config import Settings, get_settings
 from app.ebay.client import EbayClient, run_listing_workflow
-from app.models import ListingForm
+from app.models import ListingForm, ListingCondition
+from app.services.product_research import analyze_product_image, suggest_price, translate_description_to_english
 
 app = FastAPI(title="らくらく eBay 出品アシスタント")
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -27,6 +28,8 @@ async def index(request: Request, settings: Annotated[Settings, Depends(get_sett
             "has_token": bool(SESSION.get("access_token")),
             "result": None,
             "error": None,
+            "research": None,
+            "translation": None,
         },
     )
 
@@ -53,6 +56,89 @@ async def auth_callback(
     if refresh_token := token.get("refresh_token"):
         SESSION["refresh_token"] = refresh_token
     return RedirectResponse("/")
+
+
+@app.post("/research/analyze", response_class=HTMLResponse)
+async def analyze_uploaded_product(
+    request: Request,
+    settings: Annotated[Settings, Depends(get_settings)],
+    image: UploadFile,
+    user_hint: str = Form(""),
+    condition: str = Form(ListingCondition.USED_GOOD.value),
+) -> HTMLResponse:
+    try:
+        result = analyze_product_image(image.filename or "uploaded-item", user_hint, condition)
+        error = None
+    except ValueError as exc:
+        result = None
+        error = str(exc)
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "settings": settings,
+            "has_token": bool(SESSION.get("access_token")),
+            "result": None,
+            "research": result.to_dict() if result else None,
+            "translation": None,
+            "error": error,
+        },
+    )
+
+
+@app.post("/research/price", response_class=HTMLResponse)
+async def recalculate_reference_price(
+    request: Request,
+    settings: Annotated[Settings, Depends(get_settings)],
+    market_median_usd: str = Form(...),
+    condition: str = Form(...),
+    japanese_description: str = Form(""),
+) -> HTMLResponse:
+    try:
+        suggested_price = suggest_price(market_median_usd, condition)
+        research = {
+            "market_median_usd": market_median_usd,
+            "condition": condition,
+            "suggested_price_usd": str(suggested_price),
+            "japanese_description": japanese_description,
+        }
+        error = None
+    except ValueError as exc:
+        research = None
+        error = str(exc)
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "settings": settings,
+            "has_token": bool(SESSION.get("access_token")),
+            "result": None,
+            "research": research,
+            "translation": None,
+            "error": error,
+        },
+    )
+
+
+@app.post("/research/translate", response_class=HTMLResponse)
+async def translate_product_description(
+    request: Request,
+    settings: Annotated[Settings, Depends(get_settings)],
+    japanese_description: str = Form(...),
+) -> HTMLResponse:
+    translation = translate_description_to_english(japanese_description)
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "settings": settings,
+            "has_token": bool(SESSION.get("access_token")),
+            "result": None,
+            "research": {"japanese_description": japanese_description},
+            "translation": translation,
+            "error": None,
+        },
+    )
 
 
 @app.post("/listings/preview", response_class=HTMLResponse)
@@ -107,6 +193,8 @@ async def preview_listing(
             "has_token": bool(SESSION.get("access_token")),
             "result": pretty_result,
             "error": error,
+            "research": None,
+            "translation": None,
         },
     )
 

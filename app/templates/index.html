@@ -25,6 +25,57 @@
 
     {% if error %}<pre class="error">{{ error }}</pre>{% endif %}
 
+    <section class="panel research-panel">
+      <h2>画像から商品リサーチ</h2>
+      <p class="muted">商品写真をアップロードすると、商品候補・相場レンジ・状態別の参考価格・eBay向け日本語概要を作ります。</p>
+      <form action="/research/analyze" method="post" enctype="multipart/form-data">
+        <label>商品画像<input name="image" type="file" accept="image/*" required></label>
+        <label>補足キーワード（任意）<input name="user_hint" placeholder="例: ceramic cup, Nintendo, camera lens"></label>
+        <label>状態<select name="condition"><option value="USED_GOOD">中古・良い</option><option value="NEW">新品</option><option value="LIKE_NEW">未使用に近い</option><option value="USED_EXCELLENT">中古・非常に良い</option><option value="USED_ACCEPTABLE">中古・可</option></select></label>
+        <button class="button" type="submit">商品情報と相場を調べる</button>
+      </form>
+    </section>
+
+    {% if research %}
+      <section class="panel research-result">
+        <h2>リサーチ結果</h2>
+        {% if research.product_name %}<p><strong>商品候補:</strong> {{ research.product_name }}</p>{% endif %}
+        {% if research.category_id %}<p><strong>推定カテゴリID:</strong> {{ research.category_id }}</p>{% endif %}
+        {% if research.market_low_usd %}
+          <p><strong>相場:</strong> ${{ research.market_low_usd }}〜${{ research.market_high_usd }} / 中央値 ${{ research.market_median_usd }}</p>
+        {% endif %}
+        <p><strong>状態別 参考価格:</strong> ${{ research.suggested_price_usd }}</p>
+
+        {% if research.market_median_usd %}
+          <form action="/research/price" method="post" class="inline-form">
+            <input type="hidden" name="market_median_usd" value="{{ research.market_median_usd }}">
+            <input type="hidden" name="japanese_description" value="{{ research.japanese_description }}">
+            <label>状態を変えて価格を再計算<select name="condition"><option value="USED_GOOD">中古・良い</option><option value="NEW">新品</option><option value="LIKE_NEW">未使用に近い</option><option value="USED_EXCELLENT">中古・非常に良い</option><option value="USED_ACCEPTABLE">中古・可</option></select></label>
+            <button class="button secondary-blue" type="submit">参考価格を更新</button>
+          </form>
+        {% endif %}
+
+        {% if research.comparisons %}
+          <h3>比較サンプル</h3>
+          <ul>
+            {% for item in research.comparisons %}<li>{{ item.title }}: ${{ item.price_usd }}（{{ item.source }}）</li>{% endfor %}
+          </ul>
+        {% endif %}
+
+        <form action="/research/translate" method="post">
+          <label>eBay向け商品概要（日本語・修正できます）<textarea name="japanese_description" required>{{ research.japanese_description }}</textarea></label>
+          <button class="button" type="submit">英語に翻訳してプレビュー</button>
+        </form>
+      </section>
+    {% endif %}
+
+    {% if translation %}
+      <section class="panel">
+        <h2>英語プレビュー</h2>
+        <pre>{{ translation }}</pre>
+      </section>
+    {% endif %}
+
     <form action="/listings/preview" method="post" class="panel">
       <label>SKU<input name="sku" value="JP-SAMPLE-001" required></label>
       <label>英語タイトル<input name="title" maxlength="80" value="Vintage Japanese Ceramic Cup" required></label>

@@ -16,3 +16,8 @@ textarea { min-height: 110px; }
 .secondary { background: white; color: #0f62fe; }
 pre { background: #101828; border-radius: 16px; color: #d1e7ff; overflow: auto; padding: 18px; }
 .error { background: #fff1f0; color: #b42318; }
+.muted { color: #596579; }
+.research-panel { border: 2px solid #dbeafe; margin-bottom: 24px; }
+.research-result { border: 2px solid #bfdbfe; margin-bottom: 24px; }
+.inline-form { align-items: end; display: grid; gap: 12px; grid-template-columns: minmax(220px, 1fr) auto; }
+.secondary-blue { background: #eaf1ff; color: #0f62fe; }

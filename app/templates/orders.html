@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>注文確認</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="container">
+  <a href="/">← 出品画面へ</a>
+  <h1>注文・発送確認</h1>
+  {% if error %}<pre class="error">{{ error }}</pre>{% endif %}
+  <section class="panel">
+    <h2>発送追跡を登録</h2>
+    <form action="/shipments/create" method="post">
+      <label>Order ID<input name="order_id" required></label>
+      <label>Line Item ID<input name="line_item_id" required></label>
+      <label>配送会社コード<input name="carrier_code" value="JapanPost" required></label>
+      <label>追跡番号<input name="tracking_number" required></label>
+      <label class="check"><input name="dry_run" type="checkbox" checked value="true"> dry run（APIへ送信せず確認）</label>
+      <button class="button" type="submit">発送登録を確認</button>
+    </form>
+  </section>
+  {% if orders %}<pre>{{ orders }}</pre>{% endif %}
+</main></body>
+</html>

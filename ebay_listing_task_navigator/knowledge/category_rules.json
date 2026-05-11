@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {"category": "Collectibles / Figures", "keywords": ["フィギュア", "figure", "anime", "アニメ", "toy", "おもちゃ"], "fragile": true, "photo_points": ["箱", "顔", "台座", "傷", "付属品"], "title_hint": "Japanese Anime Figure"},
+    {"category": "Cameras & Photo", "keywords": ["カメラ", "デジカメ", "camera", "sony", "canon", "nikon", "レンズ"], "fragile": true, "regulated_keywords": ["電池", "バッテリー", "battery"], "photo_points": ["型番", "レンズ", "液晶", "電池室", "動作画面"], "title_hint": "Vintage Digital Camera"},
+    {"category": "Clothing", "keywords": ["tシャツ", "シャツ", "服", "clothing", "shirt", "apparel"], "fragile": false, "photo_points": ["タグ", "前面", "背面", "汚れ", "サイズ表記"], "title_hint": "Japanese Anime T-Shirt"},
+    {"category": "Video Games", "keywords": ["ゲーム", "game", "switch", "playstation", "任天堂", "sony"], "fragile": true, "photo_points": ["ケース", "ディスク/カートリッジ", "型番", "動作画面"], "title_hint": "Japanese Video Game"},
+    {"category": "General Merchandise", "keywords": [], "fragile": false, "photo_points": ["正面", "背面", "側面", "傷", "付属品"], "title_hint": "Japanese Item"}
+  ]
+}

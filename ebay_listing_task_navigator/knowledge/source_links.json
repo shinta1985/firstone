@@ -1,0 +1,124 @@
+{
+  "sources": [
+    {
+      "key": "ebay_seller_hub",
+      "source_name": "eBay Seller Hub",
+      "source_url": "https://www.ebay.com/sh/",
+      "summary": "eBayの出品管理・販売管理画面。手作業でCreate Listingへ進む起点。",
+      "check_points": ["Seller Hubを開く", "Create Listingを開始", "出品前にPreviewを確認"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "ログインが必要な場合があります。"
+    },
+    {
+      "key": "ebay_seller_hub_help",
+      "source_name": "eBay Seller Hub Help",
+      "source_url": "https://www.ebay.com/help/selling/selling-tools/seller-hub?id=4095",
+      "summary": "Seller Hubの概要と販売ツールに関するeBay公式ヘルプ。",
+      "check_points": ["Seller Hubの利用条件", "販売データと推奨事項", "ツールの場所"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "画面構成は変更される可能性があります。"
+    },
+    {
+      "key": "ebay_prohibited_items",
+      "source_name": "eBay Prohibited and Restricted Items",
+      "source_url": "https://www.ebay.com/help/policies/prohibited-restricted-items/prohibited-restricted-items?id=4207",
+      "summary": "eBayで禁止・制限される商品の入口となる公式ポリシーページ。",
+      "check_points": ["カテゴリ別の禁止商品", "制限付き商品の条件", "出品文言の制限"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "禁止・制限は頻繁に変わるため出品直前に再確認してください。"
+    },
+    {
+      "key": "ebay_shipping_policy",
+      "source_name": "eBay Shipping Policy",
+      "source_url": "https://www.ebay.com/help/policies/default/shipping-policy?id=5035",
+      "summary": "発送・追跡・配送条件に関するeBay公式ポリシー。",
+      "check_points": ["発送日数", "追跡番号", "高額商品の署名確認"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "国・商品・価格によって要件が異なる可能性があります。"
+    },
+    {
+      "key": "ebay_business_policies",
+      "source_name": "eBay Business Policies",
+      "source_url": "https://www.ebay.com/help/Selling/-/Business_policies?id=4212",
+      "summary": "支払い・返品・発送などのBusiness Policiesに関する公式ヘルプ。",
+      "check_points": ["Shipping Policy", "Return Policy", "Payment Policy"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "利用可能な機能はアカウント状態やサイトにより異なる可能性があります。"
+    },
+    {
+      "key": "japan_post_international",
+      "source_name": "Japan Post International Mail",
+      "source_url": "https://www.post.japanpost.jp/int/index_en.html",
+      "summary": "日本郵便の国際郵便トップ。料金、日数、禁制品確認への入口。",
+      "check_points": ["国際郵便サービス", "送れないもの", "国・地域別条件"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "引受停止・遅延情報を必ず確認してください。"
+    },
+    {
+      "key": "japan_post_rates",
+      "source_name": "Japan Post Rate Schedule",
+      "source_url": "https://www.post.japanpost.jp/int/charge/list/index_en.html",
+      "summary": "日本郵便の国際郵便料金確認ページ。",
+      "check_points": ["料金表", "重量上限", "配送先国のゾーン"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "送料はアプリで確定しません。公式ページで確認してください。"
+    },
+    {
+      "key": "fedex_japan",
+      "source_name": "FedEx Japan International Shipping",
+      "source_url": "https://www.fedex.com/en-jp/shipping.html",
+      "summary": "FedEx Japanの国際発送サービス案内。",
+      "check_points": ["サービス種類", "追跡", "営業所・集荷"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "燃油サーチャージや追加料金に注意してください。"
+    },
+    {
+      "key": "fedex_rates",
+      "source_name": "FedEx Japan Rates",
+      "source_url": "https://www.fedex.com/en-jp/shipping/rates.html",
+      "summary": "FedEx Japanの料金表・ゾーン表確認ページ。",
+      "check_points": ["輸出料金", "ゾーン", "追加料金"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "契約料金と公開料金が異なる場合があります。"
+    },
+    {
+      "key": "dhl_japan",
+      "source_name": "DHL Express Japan",
+      "source_url": "https://www.dhl.com/discover/en-jp/ship-with-dhl/service",
+      "summary": "DHL Express Japanの国際配送サービス案内。",
+      "check_points": ["サービス種類", "配送可能国", "輸出書類"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "通関・関税・追加料金の確認が必要です。"
+    },
+    {
+      "key": "dhl_rates",
+      "source_name": "DHL Express Japan Rate Quote",
+      "source_url": "https://www.dhl.com/discover/en-jp/starter-hub/get-estimate-mydhl",
+      "summary": "MyDHL+で見積もりと所要日数を確認する公式案内。",
+      "check_points": ["料金見積", "所要日数", "アカウント条件"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "見積もりは条件により変動します。"
+    },
+    {
+      "key": "ups_japan",
+      "source_name": "UPS Japan Shipping Costs and Rates",
+      "source_url": "https://www.ups.com/jp/en/support/shipping-support/shipping-costs-rates",
+      "summary": "UPS Japanの送料・料金ガイド確認ページ。",
+      "check_points": ["料金ガイド", "サービスガイド", "追加料金"],
+      "last_checked": "2026-05-11",
+      "confidence": "official-url",
+      "warning": "サーチャージや遠隔地料金を確認してください。"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "carriers": [
+    {"name": "Japan Post", "best_for": ["small", "light", "standard"], "links": ["japan_post_international", "japan_post_rates"], "note": "小型軽量・標準価格帯の候補。引受停止と国別条件を確認。"},
+    {"name": "FedEx", "best_for": ["high_value", "fragile", "tracked"], "links": ["fedex_japan", "fedex_rates"], "note": "高額・壊れ物・追跡重視の候補。公開料金と追加料金を確認。"},
+    {"name": "DHL Express", "best_for": ["high_value", "fast", "tracked"], "links": ["dhl_japan", "dhl_rates"], "note": "速達・追跡重視の候補。通関書類と見積もりを確認。"},
+    {"name": "UPS", "best_for": ["high_value", "tracked", "business"], "links": ["ups_japan"], "note": "法人・高額・追跡重視の候補。料金ガイドと追加料金を確認。"}
+  ]
+}

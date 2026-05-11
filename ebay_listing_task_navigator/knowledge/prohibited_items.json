@@ -1,0 +1,10 @@
+{
+  "risk_keywords": [
+    {"keyword": "電池", "risk": "Battery / lithium shipping restriction", "severity": "high", "message": "電池・リチウム電池の国際発送制限を公式ページで確認してください。"},
+    {"keyword": "バッテリー", "risk": "Battery / lithium shipping restriction", "severity": "high", "message": "バッテリー単体・内蔵品の発送条件を確認してください。"},
+    {"keyword": "香水", "risk": "Flammable liquid", "severity": "high", "message": "香水・スプレー類は航空危険物の可能性があります。"},
+    {"keyword": "食品", "risk": "Food import restriction", "severity": "medium", "message": "食品は輸入国規制・eBayポリシーを確認してください。"},
+    {"keyword": "医療", "risk": "Medical item restriction", "severity": "high", "message": "医療関連商品は出品・輸入規制を確認してください。"},
+    {"keyword": "ブランド", "risk": "Counterfeit / IP risk", "severity": "medium", "message": "ブランド品は真贋・知的財産権・商標表記に注意してください。"}
+  ]
+}

@@ -49,6 +49,48 @@
 - ローカル実行
 - JSON保存
 
+## 作成済みファイルをまとめてローカルへダウンロードする方法
+
+このアプリは `ebay_listing_task_navigator/` フォルダ一式を自分のPCに置いて使います。必要なのは、`app.py` だけではなく、`modules/`、`knowledge/`、`data/`、`requirements.txt`、`run_windows.bat` を含むフォルダ全体です。
+
+### GitHub画面からZIPでダウンロードする場合
+
+1. GitHubでこのリポジトリまたはプルリクエストのブランチを開きます。
+2. 緑色の **Code** ボタンを押します。
+3. **Download ZIP** を押します。
+4. ダウンロードしたZIPを展開します。
+5. 展開したフォルダの中にある `ebay_listing_task_navigator/` を、デスクトップやドキュメントなど好きな場所へ移動します。
+6. Windowsなら `ebay_listing_task_navigator\run_windows.bat` をダブルクリック、macOSならターミナルで `streamlit run app.py` を実行します。
+
+### Gitを使ってダウンロードする場合
+
+Gitが使える場合は、ターミナル / PowerShellでリポジトリをクローンしてからアプリフォルダへ移動します。
+
+```bash
+git clone <このリポジトリのURL>
+cd <リポジトリ名>/ebay_listing_task_navigator
+```
+
+その後、Windowsなら `run_windows.bat`、macOS / Linuxなら下のセットアップ手順で起動してください。
+
+### すでにリポジトリを持っていてZIPを作りたい場合
+
+開発環境上でフォルダをZIP化したい場合は、リポジトリのルートで次を実行します。
+
+macOS / Linux:
+
+```bash
+zip -r ebay_listing_task_navigator.zip ebay_listing_task_navigator -x "*/.venv/*" "*/__pycache__/*"
+```
+
+Windows PowerShell:
+
+```powershell
+Compress-Archive -Path ebay_listing_task_navigator -DestinationPath ebay_listing_task_navigator.zip -Force
+```
+
+作成された `ebay_listing_task_navigator.zip` を自分のPCで展開すれば、アプリ一式をまとめて配置できます。
+
 ## セットアップ方法
 
 ### macOS / Linux / VSCode Terminal

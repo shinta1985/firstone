@@ -43,12 +43,15 @@
 ## 動作環境
 
 - macOS Ventura 13.4 以降を想定
+- Windows 10 / 11 のローカル実行にも対応
 - Python 3.13 対応
 - Streamlit
 - ローカル実行
 - JSON保存
 
 ## セットアップ方法
+
+### macOS / Linux / VSCode Terminal
 
 ターミナルまたはVSCodeのターミナルで、以下をコピペしてください。
 
@@ -72,15 +75,58 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+### Windows 10 / 11: ダブルクリックで起動する方法
+
+Windowsでは、`ebay_listing_task_navigator` フォルダ内の `run_windows.bat` をダブルクリックすると、仮想環境作成、依存ライブラリインストール、Streamlit起動までを順番に実行できます。
+
+初回起動時はインターネット接続が必要です。2回目以降は作成済みの `.venv` を再利用します。
+
+```text
+ebay_listing_task_navigator\run_windows.bat
+```
+
+起動後、ブラウザで `http://localhost:8501` が開きます。止めるときは、黒いコマンドプロンプト画面で `Ctrl + C` を押してください。
+
+### Windows 10 / 11: PowerShellで手動起動する方法
+
+PowerShellを開き、プロジェクトの場所に合わせて `cd` した後、以下を実行してください。
+
+```powershell
+cd ebay_listing_task_navigator
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+もしPowerShellでスクリプト実行が制限される場合は、次のどちらかで起動してください。
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+または、コマンドプロンプトで次を実行します。
+
+```bat
+cd ebay_listing_task_navigator
+py -3.13 -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run app.py
+```
+
 ## 使い方
 
-1. 左サイドバーで「新規案件」を開きます。
-2. 商品画像、商品説明、サイズ、重量を入力します。
-3. 必要に応じて発送先国、仕入れ価格、希望利益、想定販売価格などを入力します。
-4. 「タスク生成」を押します。
-5. 推定結果、リスク警告、配送候補、公式リンク付きタスクを確認します。
-6. チェックボックスで進捗管理します。
-7. Markdown、JSON、印刷用HTMLを必要に応じて保存します。
+1. ブラウザで `http://localhost:8501` を開きます。Windowsで自動的に開かない場合は、このURLをChrome / Edgeに貼り付けてください。
+2. 左サイドバーで「新規案件」を開きます。
+3. 商品画像、商品説明、サイズ、重量を入力します。
+4. 必要に応じて発送先国、仕入れ価格、希望利益、想定販売価格などを入力します。
+5. 「タスク生成」を押します。
+6. 推定結果、リスク警告、配送候補、公式リンク付きタスクを確認します。
+7. チェックボックスで進捗管理します。
+8. Markdown、JSON、印刷用HTMLを必要に応じて保存します。
 
 ## ナレッジ更新方法
 
@@ -152,6 +198,7 @@ JSONを編集した後は、Streamlit画面を再読み込みしてください�
 ```text
 ebay_listing_task_navigator/
   app.py
+  run_windows.bat
   requirements.txt
   README.md
 

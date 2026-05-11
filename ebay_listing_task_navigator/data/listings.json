@@ -1,0 +1,30 @@
+{
+  "listings": [
+    {
+      "id": "sample-used-figure-usa",
+      "name": "サンプル: 中古フィギュアを米国向けに出品する",
+      "created_at": "2026-05-11T00:00:00",
+      "updated_at": "2026-05-11T00:00:00",
+      "product": {
+        "description": "中古の日本製フィギュア、箱あり、少し傷あり",
+        "destination_country": "USA",
+        "dimensions_cm": {"length": 22, "width": 15, "height": 30},
+        "weight_g": 850,
+        "image_paths": []
+      },
+      "parsed": {
+        "category": "Collectibles / Figures",
+        "condition": "Used",
+        "fragility": "High",
+        "regulatory_risk": "要確認: Normal",
+        "return_risk": "High",
+        "english_title": "Japanese Anime Figure from Japan - Used - Please Check Photos",
+        "english_description": "This listing is for a Japanese anime figure from Japan. Condition is estimated as Used. Please review all photos.",
+        "condition_description": "推定: Used. 要確認: Please inspect photos for scratches, accessories, and exact condition.",
+        "buyer_notice": "要確認: Import duties, taxes, and remote area fees are the buyer's responsibility when applicable."
+      },
+      "tasks": [],
+      "notes": "サンプル案件です。新規案件で再生成してください。"
+    }
+  ]
+}

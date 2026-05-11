@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {"name": "出品前", "items": [
+      {"label": "eBayのSold Listingsで相場確認", "source_key": "ebay_seller_hub_help"},
+      {"label": "禁止・制限商品確認", "source_key": "ebay_prohibited_items"},
+      {"label": "傷・欠品チェック", "source_key": "ebay_prohibited_items"},
+      {"label": "動作確認", "source_key": "ebay_seller_hub_help"},
+      {"label": "付属品確認", "source_key": "ebay_seller_hub_help"}
+    ]},
+    {"name": "写真撮影", "items": [
+      {"label": "正面を撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "背面を撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "側面を撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "型番・タグ・刻印を撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "傷・汚れ・欠けを撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "付属品・箱を撮影", "source_key": "ebay_seller_hub_help"},
+      {"label": "梱包前状態を撮影", "source_key": "ebay_shipping_policy"}
+    ]},
+    {"name": "商品説明", "items": [
+      {"label": "英語タイトル案を確認", "source_key": "ebay_seller_hub_help"},
+      {"label": "英語説明文案を確認", "source_key": "ebay_seller_hub_help"},
+      {"label": "Condition descriptionを入力", "source_key": "ebay_seller_hub_help"},
+      {"label": "バイヤー注意文を記載", "source_key": "ebay_shipping_policy"}
+    ]},
+    {"name": "価格", "items": [
+      {"label": "仕入れ価格を入力", "source_key": "ebay_business_policies"},
+      {"label": "想定送料を公式料金ページで確認", "source_key": "japan_post_rates"},
+      {"label": "eBay手数料率を自分のカテゴリで確認", "source_key": "ebay_business_policies"},
+      {"label": "利益計算と最低販売価格を確認", "source_key": "ebay_business_policies"}
+    ]},
+    {"name": "配送", "items": [
+      {"label": "日本郵便の国際郵便条件を確認", "source_key": "japan_post_international"},
+      {"label": "日本郵便料金を確認", "source_key": "japan_post_rates"},
+      {"label": "FedEx料金・条件を確認", "source_key": "fedex_rates"},
+      {"label": "DHL料金・条件を確認", "source_key": "dhl_rates"},
+      {"label": "UPS料金・条件を確認", "source_key": "ups_japan"},
+      {"label": "サイズ・重量を再計測", "source_key": "japan_post_rates"},
+      {"label": "禁制品・危険物を確認", "source_key": "ebay_prohibited_items"},
+      {"label": "追跡番号付き配送を選ぶ", "source_key": "ebay_shipping_policy"}
+    ]},
+    {"name": "eBay出品", "items": [
+      {"label": "Seller Hubを開く", "source_key": "ebay_seller_hub"},
+      {"label": "Create Listingを開始", "source_key": "ebay_seller_hub"},
+      {"label": "写真を登録", "source_key": "ebay_seller_hub_help"},
+      {"label": "タイトルを入力", "source_key": "ebay_seller_hub_help"},
+      {"label": "Descriptionを入力", "source_key": "ebay_seller_hub_help"},
+      {"label": "Shipping Policyを設定", "source_key": "ebay_business_policies"},
+      {"label": "Return Policyを設定", "source_key": "ebay_business_policies"},
+      {"label": "Preview確認", "source_key": "ebay_seller_hub"},
+      {"label": "Publish", "source_key": "ebay_seller_hub"}
+    ]},
+    {"name": "売れた後", "items": [
+      {"label": "支払い確認", "source_key": "ebay_seller_hub"},
+      {"label": "梱包", "source_key": "ebay_shipping_policy"},
+      {"label": "発送", "source_key": "ebay_shipping_policy"},
+      {"label": "追跡番号登録", "source_key": "ebay_shipping_policy"},
+      {"label": "バイヤーへ発送連絡", "source_key": "ebay_shipping_policy"},
+      {"label": "配達確認", "source_key": "ebay_shipping_policy"}
+    ]}
+  ]
+}
